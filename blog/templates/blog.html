@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Sahil has written {{q.count}}| blog {{q.count|pluralize}} </h1>
+
+
+{% for r in q %}
+
+<a href="{% url 'detail' r.id %}">{{r.name}}</a>
+
+ NAME:: {{r.name}} <br>
+ <h2>{{r.date|date:'M d Y'|upper}}</h2> <br>
+ <h1>{{r.description}} <br></h1>
+ <h2>{{r.date|date:'M d Y'|upper}}</h2> <br>
+ <img src="{{r.image.url}}"> <br> 
+{{r.image.url}} <br>  
+
+   
+ 
+
+{% if r.url %} <br>
+
+<a href="{{r.url}}">link</a> <br>
+{% endif %}
+
+
+{% endfor %}
+<a href="{% url 'home' %}">HOMEPAGE</a>
+{% endblock %}

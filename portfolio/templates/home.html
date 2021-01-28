@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>SAHIL'S PORTFOLIO</h1>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'portfolio/base.css' %}">
+
+<a href="{% url 'blo' %}">BLOG</a> <br>
+<a href="{% static 'portfolio/finalsahil.pdf'%}">RESUME</a> <br>
+<img src="{% static 'portfolio/sahil.jpg' %}" class="sahil"> <br>
+{% for c in b %}
+
+<a href="{{c.url}}">link</a> <br>
+ <h1>{{c.titleman}} </h1>  <br>
+<p>{{c.description}}</p>  <br>
+url::{{c.url}} <br>
+{{c.date}} <br>
+{{c.image.url}} <br>
+<img src="{{c.image.url}}"> <br>
+{% if c.url %}
+
+
+
+{% endif %}
+
+{% endfor %}
+{% endblock %}
+
+
+   
+    
+    
+
